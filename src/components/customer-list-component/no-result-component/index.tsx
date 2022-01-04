@@ -1,6 +1,6 @@
 import useMergeStyles from './theme';
 import React, { useContext } from 'react';
-import { NoResultSearchProps, NoResultSearchStyles } from '../types';
+import { NoResultSearchProps, NoResultSearchStyles } from './types';
 import { Text, View } from 'react-native';
 import { NoResultIcon } from '../../../assets';
 import { ThemeContext } from 'react-native-theme-component';

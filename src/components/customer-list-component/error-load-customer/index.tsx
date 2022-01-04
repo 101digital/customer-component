@@ -1,7 +1,7 @@
 import useMergeStyles from './theme';
 import React, { useContext } from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
-import { ErrorLoadCustomerComponentProps, ErrorLoadCustomerComponentStyles } from '../types';
+import { ErrorLoadCustomerComponentProps, ErrorLoadCustomerComponentStyles } from './types';
 import { DangerIcon } from '../../../assets';
 import { CustomerContext } from '../../../context/customer-context';
 import { ThemeContext } from 'react-native-theme-component';

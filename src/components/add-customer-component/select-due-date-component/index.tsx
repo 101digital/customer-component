@@ -3,7 +3,7 @@ import { Formik } from 'formik';
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import { Platform, Text, TouchableOpacity, View } from 'react-native';
 import { BottomSheet, InputField, ThemeContext } from 'react-native-theme-component';
-import { SelectDueDateComponentProps, SelectDueDateComponentStyles } from '../types';
+import { SelectDueDateComponentProps, SelectDueDateComponentStyles } from './types';
 import { CustomDueDateData, CustomDueDateSchema } from './model';
 import useMergeStyles from './theme';
 import { isEmpty } from 'lodash';

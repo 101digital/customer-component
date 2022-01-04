@@ -1,7 +1,7 @@
 import useMergeStyles from './theme';
 import React, { useContext, useState } from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
-import { CustomerItemProps, CustomerItemStyles } from '../types';
+import { CustomerItemProps, CustomerItemStyles } from './types';
 import { AlertModal, BottomSheet, ThemeContext } from 'react-native-theme-component';
 import { DeleteIcon, EditIcon, MoreIcon } from '../../../assets';
 

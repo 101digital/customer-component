@@ -1,7 +1,7 @@
 import useMergeStyles from './theme';
 import React, { useContext } from 'react';
 import { ActivityIndicator, FlatList, RefreshControl, SectionList, Text, View } from 'react-native';
-import { CustomerInvoiceComponentProps, CustomerInvoiceComponentStyles } from '../types';
+import { CustomerInvoiceComponentProps, CustomerInvoiceComponentStyles } from './types';
 import { CustomerContext } from '../../../context/customer-context';
 import { isEmpty } from 'lodash';
 import CustomerEmptyInvoiceComponent from '../customer-empty-invoice-component';

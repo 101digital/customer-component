@@ -2,7 +2,7 @@ import { defaultsDeep } from 'lodash';
 import { useContext } from 'react';
 import { StyleSheet } from 'react-native';
 import { ThemeContext } from 'react-native-theme-component';
-import { CustomerTypeComponentStyles } from '../types';
+import { CustomerTypeComponentStyles } from './types';
 
 const useMergeStyles = (style?: CustomerTypeComponentStyles): CustomerTypeComponentStyles => {
   const { fonts, colors } = useContext(ThemeContext);

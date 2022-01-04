@@ -1,7 +1,7 @@
 import { EmptyInvoiceIcon } from '../../../assets';
 import React, { useContext } from 'react';
 import { RefreshControl, ScrollView, Text } from 'react-native';
-import { EmptyInvoiceComponentProps, EmptyInvoiceComponentStyles } from '../types';
+import { EmptyInvoiceComponentProps, EmptyInvoiceComponentStyles } from './types';
 import useMergeStyles from './theme';
 import { ThemeContext } from 'react-native-theme-component';
 import { CustomerContext } from '../../../context/customer-context';

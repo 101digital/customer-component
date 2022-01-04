@@ -2,7 +2,7 @@ import { defaultsDeep } from 'lodash';
 import { useContext } from 'react';
 import { StyleSheet } from 'react-native';
 import { ThemeContext } from 'react-native-theme-component';
-import { EmptyCustomerStyles } from '../types';
+import { EmptyCustomerStyles } from './types';
 
 const useMergeStyles = (style?: EmptyCustomerStyles): EmptyCustomerStyles => {
   const { colors, fonts } = useContext(ThemeContext);

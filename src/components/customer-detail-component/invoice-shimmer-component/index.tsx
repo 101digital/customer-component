@@ -2,7 +2,7 @@ import React from 'react';
 import { View } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { createShimmerPlaceholder } from 'react-native-shimmer-placeholder';
-import { InvoiceShimmerComponentProps, InvoiceShimmerComponentStyles } from '../types';
+import { InvoiceShimmerComponentProps, InvoiceShimmerComponentStyles } from './types';
 const ShimmerPlaceHolder = createShimmerPlaceholder(LinearGradient);
 import useMergeStyles from './theme';
 

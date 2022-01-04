@@ -1,6 +1,6 @@
 import { defaultsDeep } from 'lodash';
 import { StyleSheet } from 'react-native';
-import { ShimmerItemStyles } from '../types';
+import { ShimmerItemStyles } from './types';
 
 const useMergeStyles = (style?: ShimmerItemStyles): ShimmerItemStyles => {
   const defaultStyles: ShimmerItemStyles = StyleSheet.create({

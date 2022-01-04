@@ -1,10 +1,10 @@
 import useMergeStyles from './theme';
 import React, { useContext } from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
-import { InvoiceSummaryProps, InvoiceSummaryStyles } from '../types';
+import { InvoiceSummaryProps, InvoiceSummaryStyles } from './types';
 import { addAlpha } from '../../../utils/helper';
 import { CustomerContext } from '../../../context/customer-context';
-import { useCurrencyFormat } from 'react-native-theme-component';
+import { ThemeContext, useCurrencyFormat } from 'react-native-theme-component';
 import LinearGradient from 'react-native-linear-gradient';
 import { createShimmerPlaceholder } from 'react-native-shimmer-placeholder';
 const ShimmerPlaceHolder = createShimmerPlaceholder(LinearGradient);
@@ -13,6 +13,7 @@ const InvoiceSummaryComponent = (props: InvoiceSummaryProps) => {
   const { style, currencyCode, paidColor, dueColor, overdueColor, colorOpacity } = props;
   const styles: InvoiceSummaryStyles = useMergeStyles(style);
   const { isLoadingSummary, customerSummary } = useContext(CustomerContext);
+  const { i18n } = useContext(ThemeContext);
 
   const _paidColor = paidColor ?? '#00CD5F';
   const _dueColor = dueColor ?? '#FFAD33';
@@ -66,7 +67,7 @@ const InvoiceSummaryComponent = (props: InvoiceSummaryProps) => {
       {isLoadingSummary
         ? _renderShimmerItem()
         : _renderSummaryItem(
-            'Paid',
+            i18n?.t('customer_component.lbl_paid_invoice') ?? 'Paid',
             customerSummary?.numberOfPaid ?? 0,
             customerSummary?.totalPaidAmount ?? 0,
             _paidColor,
@@ -75,7 +76,7 @@ const InvoiceSummaryComponent = (props: InvoiceSummaryProps) => {
       {isLoadingSummary
         ? _renderShimmerItem()
         : _renderSummaryItem(
-            'Due',
+            i18n?.t('customer_component.lbl_due_invoice') ?? 'Due',
             customerSummary?.numberOfDue ?? 0,
             customerSummary?.invoiceTotalDue ?? 0,
             _dueColor,
@@ -84,7 +85,7 @@ const InvoiceSummaryComponent = (props: InvoiceSummaryProps) => {
       {isLoadingSummary
         ? _renderShimmerItem()
         : _renderSummaryItem(
-            'Overdue',
+            i18n?.t('customer_component.lbl_overdue_invoice') ?? 'Overdue',
             customerSummary?.numberOfOverDue ?? 0,
             customerSummary?.invoiceTotalOverDue ?? 0,
             _overdueColor,

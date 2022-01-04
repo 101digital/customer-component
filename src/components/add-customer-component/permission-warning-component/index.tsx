@@ -4,7 +4,7 @@ import { Alert, Linking, Platform, Text, View } from 'react-native';
 // @ts-ignore
 import IntentLauncher from 'react-native-intent-launcher';
 import DeviceInfo from 'react-native-device-info';
-import { PermissionWarningComponentProps, PermissionWarningComponentStyles } from '../types';
+import { PermissionWarningComponentProps, PermissionWarningComponentStyles } from './types';
 import useMergeStyles from './theme';
 import { ThemeContext } from 'react-native-theme-component';
 

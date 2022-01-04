@@ -2,7 +2,7 @@ import { defaultsDeep } from 'lodash';
 import { useContext } from 'react';
 import { StyleSheet, Dimensions, Platform } from 'react-native';
 import { ThemeContext } from 'react-native-theme-component';
-import { ContactAutoCompleteComponentStyles } from '../types';
+import { ContactAutoCompleteComponentStyles } from './types';
 const { width } = Dimensions.get('window');
 
 const useMergeStyles = (

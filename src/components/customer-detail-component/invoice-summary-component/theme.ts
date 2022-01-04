@@ -2,10 +2,10 @@ import { defaultsDeep } from 'lodash';
 import { useContext } from 'react';
 import { StyleSheet } from 'react-native';
 import { ThemeContext } from 'react-native-theme-component';
-import { InvoiceSummaryStyles } from '../types';
+import { InvoiceSummaryStyles } from './types';
 
 const useMergeStyles = (style?: InvoiceSummaryStyles): InvoiceSummaryStyles => {
-  const { fonts, colors } = useContext(ThemeContext);
+  const { fonts } = useContext(ThemeContext);
 
   const defaultStyles: InvoiceSummaryStyles = StyleSheet.create({
     containerStyle: {

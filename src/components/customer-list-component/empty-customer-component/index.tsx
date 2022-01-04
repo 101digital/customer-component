@@ -1,18 +1,18 @@
 import useMergeStyles from './theme';
 import React, { useContext } from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
-import { EmptyCustomerProps, EmptyCustomerStyles } from '../types';
+import { EmptyCustomerProps, EmptyCustomerStyles } from './types';
 import { ThemeContext } from 'react-native-theme-component';
 import { EmptyCustomerIcon, PlusIcon } from '../../../assets';
 
 const EmptyCustomerComponent = (props: EmptyCustomerProps) => {
-  const { style, onAddCustomer, phoneBookIcon, plusIcon } = props;
+  const { style, onAddCustomer, noCustomerIcon, plusIcon } = props;
   const styles: EmptyCustomerStyles = useMergeStyles(style);
   const { colors, i18n } = useContext(ThemeContext);
 
   return (
     <View style={styles.containerStyle}>
-      {phoneBookIcon ?? <EmptyCustomerIcon />}
+      {noCustomerIcon ?? <EmptyCustomerIcon />}
       <Text style={styles.titleTextStyle}>
         {i18n?.t('customer_component.lbl_no_customers') ?? 'No Customers'}
       </Text>

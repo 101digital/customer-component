@@ -3,7 +3,7 @@ import { Formik } from 'formik';
 import { debounce } from 'lodash';
 import React, { forwardRef, useContext, useImperativeHandle, useRef } from 'react';
 import { TextInput, View } from 'react-native';
-import { SearchBoxProps, SearchBoxStyles } from '../types';
+import { SearchBoxProps, SearchBoxStyles } from './types';
 import { SearchData } from './model';
 import useMergeStyles from './theme';
 import { ThemeContext } from 'react-native-theme-component';

@@ -1,7 +1,7 @@
 import { ThemeContext } from 'react-native-theme-component';
 import { defaultsDeep } from 'lodash';
 import { StyleSheet } from 'react-native';
-import { SectionHeaderStyles } from '../types';
+import { SectionHeaderStyles } from './types';
 import { useContext } from 'react';
 
 const useMergeStyles = (style?: SectionHeaderStyles): SectionHeaderStyles => {

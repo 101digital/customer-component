@@ -1,6 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
-import { ShimmerItemProps, ShimmerItemStyles } from '../types';
+import { ShimmerItemProps, ShimmerItemStyles } from './types';
 import useMergeStyles from './theme';
 import LinearGradient from 'react-native-linear-gradient';
 import { createShimmerPlaceholder } from 'react-native-shimmer-placeholder';

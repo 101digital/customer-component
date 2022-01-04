@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { FlatList, ScrollView, Text, View } from 'react-native';
 import useMergeStyles from './theme';
-import { CustomerInformationProps, CustomerInformationStyles } from '../types';
+import { CustomerInformationProps, CustomerInformationStyles } from './types';
 import { AlertModal, Button, ThemeContext } from 'react-native-theme-component';
 import { isEmpty } from 'lodash';
 import { CustomerAddress } from '../../../types';

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, View } from 'react-native';
-import { SectionHeaderProps, SectionHeaderStyles } from '../types';
+import { SectionHeaderProps, SectionHeaderStyles } from './types';
 import useMergeStyles from './theme';
 
 const SectionHeaderComponent = (props: SectionHeaderProps) => {

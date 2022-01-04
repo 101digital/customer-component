@@ -2,7 +2,7 @@ import { defaultsDeep } from 'lodash';
 import { useContext } from 'react';
 import { StyleSheet } from 'react-native';
 import { ThemeContext } from 'react-native-theme-component';
-import { NoResultSearchStyles } from '../types';
+import { NoResultSearchStyles } from './types';
 
 const useMergeStyles = (style?: NoResultSearchStyles): NoResultSearchStyles => {
   const { fonts } = useContext(ThemeContext);

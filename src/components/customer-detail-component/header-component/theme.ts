@@ -2,7 +2,7 @@ import { defaultsDeep } from 'lodash';
 import { useContext } from 'react';
 import { StyleSheet } from 'react-native';
 import { ThemeContext } from 'react-native-theme-component';
-import { HeaderDetailStyles } from '../types';
+import { HeaderDetailStyles } from './types';
 
 const useMergeStyles = (style?: HeaderDetailStyles): HeaderDetailStyles => {
   const { fonts } = useContext(ThemeContext);

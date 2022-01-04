@@ -1,7 +1,7 @@
 import useMergeStyles from './theme';
 import React, { useContext, useState } from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
-import { HeaderDetailProps, HeaderDetailStyles } from '../types';
+import { HeaderDetailProps, HeaderDetailStyles } from './types';
 import { ThemeContext } from 'react-native-theme-component';
 
 const HeaderDetailComponent = (props: HeaderDetailProps) => {

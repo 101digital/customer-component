@@ -88,7 +88,10 @@
       "btn_update_customer": "Update customer",
       "msg_error_load_customer": "Error loading customers",
       "btn_retry": "Try again",
-      "lbl_no_customer_invoice_found": "This customer doesn’t have any invoice"
+      "lbl_no_customer_invoice_found": "This customer doesn’t have any invoice",
+      "lbl_due_invoice": "Due",
+      "lbl_overdue_invoice": "Overdue",
+      "lbl_paid_invoice": "Paid"
     }
   }
 }

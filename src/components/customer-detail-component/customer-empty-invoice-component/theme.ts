@@ -2,7 +2,7 @@ import { defaultsDeep } from 'lodash';
 import { useContext } from 'react';
 import { StyleSheet } from 'react-native';
 import { ThemeContext } from 'react-native-theme-component';
-import { EmptyInvoiceComponentStyles } from '../types';
+import { EmptyInvoiceComponentStyles } from './types';
 
 const useMergeStyles = (style?: EmptyInvoiceComponentStyles): EmptyInvoiceComponentStyles => {
   const { fonts } = useContext(ThemeContext);

@@ -1,7 +1,7 @@
 import useMergeStyles from './theme';
 import React from 'react';
 import { View } from 'react-native';
-import { CustomerActivityProps, CustomerActivityStyles } from '../types';
+import { CustomerActivityProps, CustomerActivityStyles } from './types';
 import InvoiceSummaryComponent from '../invoice-summary-component';
 import CustomerInvoicesComponent from '../customer-invoices-component';
 

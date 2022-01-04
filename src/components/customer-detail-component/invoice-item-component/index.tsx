@@ -2,7 +2,7 @@ import { AttachmentIcon, InvoiceViewIcon, MoreIcon } from '../../../assets';
 import { isEmpty } from 'lodash';
 import React from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
-import { InvoiceItemComponentProps, InvoiceItemComponentStyles } from '../types';
+import { InvoiceItemComponentProps, InvoiceItemComponentStyles } from './types';
 import useMergeStyles from './theme';
 import moment from 'moment';
 import { useCurrencyFormat } from 'react-native-theme-component';

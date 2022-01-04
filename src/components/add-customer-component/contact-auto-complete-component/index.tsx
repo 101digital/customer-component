@@ -1,6 +1,6 @@
 import React from 'react';
 import { ScrollView, Text, TouchableOpacity, View } from 'react-native';
-import { ContactAutoCompleteComponentProps, ContactAutoCompleteComponentStyles } from '../types';
+import { ContactAutoCompleteComponentProps, ContactAutoCompleteComponentStyles } from './types';
 import useMergeStyles from './theme';
 
 const ContactAutoCompleteComponent = (props: ContactAutoCompleteComponentProps) => {

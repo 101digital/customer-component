@@ -1,6 +1,6 @@
 import { defaultsDeep } from 'lodash';
 import { StyleSheet } from 'react-native';
-import { InvoiceShimmerComponentStyles } from '../types';
+import { InvoiceShimmerComponentStyles } from './types';
 
 const useMergeStyles = (style?: InvoiceShimmerComponentStyles): InvoiceShimmerComponentStyles => {
   const defaultStyles: InvoiceShimmerComponentStyles = StyleSheet.create({
