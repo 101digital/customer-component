@@ -20,12 +20,14 @@ const CustomerInvoicesComponent = (props: CustomerInvoiceComponentProps) => {
     onInvoiceDetails,
     indicatorColor,
     InvoiceShimmer,
+    sectionDateFormat,
   } = props;
   const styles: CustomerInvoiceComponentStyles = useMergeStyles(style);
   const { allInvoices, refreshCustomerInvoice, customerDetails, getCustomerInvoice } = useContext(
     CustomerContext
   );
   const { colors } = useContext(ThemeContext);
+  const _dateFormat = sectionDateFormat ?? 'MMM YYYY';
 
   const refreshInvoice = () => {
     refreshCustomerInvoice({ customerId: customerDetails?.id });
@@ -79,7 +81,7 @@ const CustomerInvoicesComponent = (props: CustomerInvoiceComponentProps) => {
         )}
         renderSectionHeader={({ section: { date } }) => (
           <View style={styles.sectionContainerStyle}>
-            <Text style={styles.sectionTextStyle}>{moment(date).format('MMM YYYY')}</Text>
+            <Text style={styles.sectionTextStyle}>{moment(date).format(_dateFormat)}</Text>
           </View>
         )}
         ItemSeparatorComponent={() => <View style={styles.itemSeparatorStyle} />}

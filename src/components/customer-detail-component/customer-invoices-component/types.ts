@@ -8,6 +8,7 @@ export type CustomerInvoiceComponentProps = {
   onInvoiceDetails: (invoice: Invoice) => void;
   onInvoiceActions: (invoice: Invoice) => void;
   indicatorColor?: string;
+  sectionDateFormat?: string;
   EmptyInvoice?: EmptyInvoiceComponentProps;
   InvoiceItem?: {
     props?: {
