@@ -26,7 +26,7 @@ const EmptyCustomerComponent = (props: EmptyCustomerProps) => {
         />
       }
     >
-      <View style={styles.containerStyle}>
+      <View style={styles.contentContainerStyle}>
         {noCustomerIcon ?? <EmptyCustomerIcon />}
         <Text style={styles.titleTextStyle}>
           {i18n?.t('customer_component.lbl_no_customers') ?? 'No Customers'}
