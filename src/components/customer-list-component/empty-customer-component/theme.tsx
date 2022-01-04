@@ -10,6 +10,9 @@ const useMergeStyles = (style?: EmptyCustomerStyles): EmptyCustomerStyles => {
   const defaultStyles: EmptyCustomerStyles = StyleSheet.create({
     containerStyle: {
       flex: 1,
+    },
+    contentContainerStyle: {
+      flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
       paddingHorizontal: 20,
