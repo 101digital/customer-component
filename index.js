@@ -11,3 +11,4 @@ export { default as customerComponentData } from './src/customer-component-data.
 export { default as CustomerListComponent } from './src/components/customer-list-component';
 export { default as CustomerDetailComponent } from './src/components/customer-detail-component';
 export { default as AddCustomerComponent } from './src/components/add-customer-component';
+export * from './src/assets'
