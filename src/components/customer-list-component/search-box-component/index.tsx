@@ -1,7 +1,7 @@
 import { SearchIcon } from '../../../assets';
 import { Formik } from 'formik';
 import { debounce } from 'lodash';
-import React, { forwardRef, useContext, useImperativeHandle, useRef } from 'react';
+import React, { forwardRef, useCallback, useContext, useImperativeHandle, useRef } from 'react';
 import { TextInput, View } from 'react-native';
 import { SearchBoxProps, SearchBoxStyles } from './types';
 import { SearchData } from './model';
@@ -30,9 +30,12 @@ const SearchBoxComponent = forwardRef((props: SearchBoxProps, ref) => {
     formikRef?.current?.setFieldValue('key', '');
   };
 
-  const _onSearch = debounce(function (k) {
-    onSearch(k);
-  }, 300);
+  const _onSearch = useCallback(
+    debounce(function (k) {
+      onSearch(k);
+    }, 300),
+    []
+  );
 
   return (
     <View style={styles.containerStyle}>
