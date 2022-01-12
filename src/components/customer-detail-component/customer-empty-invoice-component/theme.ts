@@ -5,7 +5,7 @@ import { ThemeContext } from 'react-native-theme-component';
 import { EmptyInvoiceComponentStyles } from './types';
 
 const useMergeStyles = (style?: EmptyInvoiceComponentStyles): EmptyInvoiceComponentStyles => {
-  const { fonts } = useContext(ThemeContext);
+  const { fonts, colors } = useContext(ThemeContext);
   const defaultStyles: EmptyInvoiceComponentStyles = StyleSheet.create({
     containerStyle: {
       flex: 1,
@@ -15,7 +15,7 @@ const useMergeStyles = (style?: EmptyInvoiceComponentStyles): EmptyInvoiceCompon
     messageStyle: {
       fontSize: 14,
       fontFamily: fonts.regular,
-      color: '#000000',
+      color: colors.primaryTextColor,
       marginHorizontal: 30,
       textAlign: 'center',
       marginTop: 20,

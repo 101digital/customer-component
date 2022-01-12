@@ -5,7 +5,7 @@ import { ThemeContext } from 'react-native-theme-component';
 import { InvoiceSummaryStyles } from './types';
 
 const useMergeStyles = (style?: InvoiceSummaryStyles): InvoiceSummaryStyles => {
-  const { fonts } = useContext(ThemeContext);
+  const { fonts, colors } = useContext(ThemeContext);
 
   const defaultStyles: InvoiceSummaryStyles = StyleSheet.create({
     containerStyle: {
@@ -31,7 +31,7 @@ const useMergeStyles = (style?: InvoiceSummaryStyles): InvoiceSummaryStyles => {
     itemValueStyle: {
       fontFamily: fonts.regular,
       fontSize: 16,
-      color: '#000000',
+      color: colors.primaryTextColor,
     },
     itemHeaderShimmerStyle: {
       flexDirection: 'row',

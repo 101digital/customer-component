@@ -5,7 +5,7 @@ import { ThemeContext } from 'react-native-theme-component';
 import { HeaderDetailStyles } from './types';
 
 const useMergeStyles = (style?: HeaderDetailStyles): HeaderDetailStyles => {
-  const { fonts } = useContext(ThemeContext);
+  const { fonts, colors } = useContext(ThemeContext);
   const defaultStyles: HeaderDetailStyles = StyleSheet.create({
     containerStyle: {
       backgroundColor: 'white',
@@ -35,7 +35,7 @@ const useMergeStyles = (style?: HeaderDetailStyles): HeaderDetailStyles => {
     actionTextStyle: {
       fontFamily: fonts.regular,
       fontWeight: '600',
-      color: '#000',
+      color: colors.primaryTextColor,
     },
   });
 

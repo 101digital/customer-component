@@ -5,7 +5,7 @@ import { ThemeContext } from 'react-native-theme-component';
 import { AddCustomerComponentStyles } from './types';
 
 const useMergeStyles = (style?: AddCustomerComponentStyles): AddCustomerComponentStyles => {
-  const { fonts } = useContext(ThemeContext);
+  const { fonts, colors } = useContext(ThemeContext);
   const defaultStyles: AddCustomerComponentStyles = StyleSheet.create({
     containerStyle: {
       flex: 1,
@@ -32,7 +32,7 @@ const useMergeStyles = (style?: AddCustomerComponentStyles): AddCustomerComponen
     },
     labelTextStyle: {
       marginBottom: 5,
-      color: '#0d2050',
+      color: colors.primaryTextColor,
       fontSize: 13,
       fontFamily: fonts.medium,
       marginTop: 15,

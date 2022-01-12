@@ -5,7 +5,7 @@ import { ThemeContext } from 'react-native-theme-component';
 import { CustomerInvoiceComponentStyles } from './types';
 
 const useMergeStyles = (style?: CustomerInvoiceComponentStyles): CustomerInvoiceComponentStyles => {
-  const { fonts } = useContext(ThemeContext);
+  const { fonts, colors } = useContext(ThemeContext);
   const defaultStyles: CustomerInvoiceComponentStyles = StyleSheet.create({
     containerStyle: {
       flex: 1,
@@ -20,7 +20,7 @@ const useMergeStyles = (style?: CustomerInvoiceComponentStyles): CustomerInvoice
     },
     sectionTextStyle: {
       fontFamily: fonts.regular,
-      color: '#0d2050',
+      color: colors.primaryTextColor,
       fontSize: 13,
     },
     itemSeparatorStyle: {

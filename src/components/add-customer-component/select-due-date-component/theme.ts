@@ -5,14 +5,18 @@ import { ThemeContext } from 'react-native-theme-component';
 import { SelectDueDateComponentStyles } from './types';
 
 const useMergeStyles = (style?: SelectDueDateComponentStyles): SelectDueDateComponentStyles => {
-  const { fonts } = useContext(ThemeContext);
+  const { fonts, colors } = useContext(ThemeContext);
 
   const defaultStyles: SelectDueDateComponentStyles = StyleSheet.create({
+    containerStyle: {
+      paddingHorizontal: 20,
+      marginTop: 15,
+    },
     headerTitleStyle: {
       fontFamily: fonts.medium,
       fontSize: 14,
       fontWeight: '600',
-      color: '#000',
+      color: colors.primaryTextColor,
       textAlign: 'center',
       marginBottom: 15,
     },

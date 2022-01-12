@@ -5,7 +5,7 @@ import { ThemeContext } from 'react-native-theme-component';
 import { NoResultSearchStyles } from './types';
 
 const useMergeStyles = (style?: NoResultSearchStyles): NoResultSearchStyles => {
-  const { fonts } = useContext(ThemeContext);
+  const { fonts, colors } = useContext(ThemeContext);
   const defaultStyles: NoResultSearchStyles = StyleSheet.create({
     containerStyle: {
       flex: 1,
@@ -15,7 +15,7 @@ const useMergeStyles = (style?: NoResultSearchStyles): NoResultSearchStyles => {
     titleStyle: {
       fontFamily: fonts.medium,
       fontSize: 15,
-      color: '#0d2050',
+      color: colors.primaryTextColor,
       marginTop: 24,
       textAlign: 'center',
     },

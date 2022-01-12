@@ -19,7 +19,7 @@ const useMergeStyles = (
       fontSize: 15,
       fontFamily: fonts.regular,
       lineHeight: 20,
-      color: 'black',
+      color: colors.primaryTextColor,
       marginTop: 10,
     },
     retryTextStyle: {

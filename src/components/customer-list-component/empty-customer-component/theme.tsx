@@ -20,14 +20,14 @@ const useMergeStyles = (style?: EmptyCustomerStyles): EmptyCustomerStyles => {
     titleTextStyle: {
       fontSize: 15,
       fontFamily: fonts.medium,
-      color: '#000',
+      color: colors.primaryTextColor,
       marginVertical: 20,
       textAlign: 'center',
     },
     messageTextStyle: {
       fontSize: 14,
       fontFamily: fonts.regular,
-      color: '#000',
+      color: colors.primaryTextColor,
       marginBottom: 30,
       marginHorizontal: 30,
       textAlign: 'center',

@@ -5,7 +5,7 @@ import { SectionHeaderStyles } from './types';
 import { useContext } from 'react';
 
 const useMergeStyles = (style?: SectionHeaderStyles): SectionHeaderStyles => {
-  const { fonts } = useContext(ThemeContext);
+  const { fonts, colors } = useContext(ThemeContext);
   const defaultStyles: SectionHeaderStyles = StyleSheet.create({
     containerStyle: {
       paddingLeft: 15,
@@ -14,7 +14,7 @@ const useMergeStyles = (style?: SectionHeaderStyles): SectionHeaderStyles => {
     },
     titleStyle: {
       fontFamily: fonts.regular,
-      color: '#0d2050',
+      color: colors.primaryTextColor,
       fontSize: 13,
     },
   });

@@ -35,37 +35,43 @@ const CustomerItemComponent = (props: CustomerItemProps) => {
         onBackButtonPress={toggleMore}
         onBackdropPress={toggleMore}
       >
-        <TouchableOpacity
-          activeOpacity={0.8}
-          style={styles.actionButtonStyle}
-          onPress={() => {
-            toggleMore();
-            onEdit();
-          }}
-        >
-          {editIcon ?? <EditIcon />}
-          <Text style={styles.actionTitleStyle}>
-            {i18n?.t('customer_component.btn_edit_customer') ?? 'Edit customer'}
-          </Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          activeOpacity={0.8}
-          style={styles.actionButtonStyle}
-          onPress={() => {
-            toggleMore();
-            toggleConfirmDelete();
-          }}
-        >
-          {deleteIcon ?? <DeleteIcon />}
-          <Text style={styles.actionTitleStyle}>
-            {i18n?.t('customer_component.btn_delete_customer') ?? 'Delete customer'}
-          </Text>
-        </TouchableOpacity>
-        <TouchableOpacity activeOpacity={0.8} style={styles.cancelButtonStyle} onPress={toggleMore}>
-          <Text style={styles.cancelTextStyle}>
-            {i18n?.t('customer_component.btn_cancel')?.toUpperCase() ?? 'CANCEL'}
-          </Text>
-        </TouchableOpacity>
+        <View style={styles.actionsContainerStyle}>
+          <TouchableOpacity
+            activeOpacity={0.8}
+            style={styles.actionButtonStyle}
+            onPress={() => {
+              toggleMore();
+              onEdit();
+            }}
+          >
+            {editIcon ?? <EditIcon />}
+            <Text style={styles.actionTitleStyle}>
+              {i18n?.t('customer_component.btn_edit_customer') ?? 'Edit customer'}
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            activeOpacity={0.8}
+            style={styles.actionButtonStyle}
+            onPress={() => {
+              toggleMore();
+              toggleConfirmDelete();
+            }}
+          >
+            {deleteIcon ?? <DeleteIcon />}
+            <Text style={styles.actionTitleStyle}>
+              {i18n?.t('customer_component.btn_delete_customer') ?? 'Delete customer'}
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            activeOpacity={0.8}
+            style={styles.cancelButtonStyle}
+            onPress={toggleMore}
+          >
+            <Text style={styles.cancelTextStyle}>
+              {i18n?.t('customer_component.btn_cancel')?.toUpperCase() ?? 'CANCEL'}
+            </Text>
+          </TouchableOpacity>
+        </View>
       </BottomSheet>
       <AlertModal
         isVisible={isConfirmDelete}

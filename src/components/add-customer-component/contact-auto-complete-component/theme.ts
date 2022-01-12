@@ -8,7 +8,7 @@ const { width } = Dimensions.get('window');
 const useMergeStyles = (
   style?: ContactAutoCompleteComponentStyles
 ): ContactAutoCompleteComponentStyles => {
-  const { fonts } = useContext(ThemeContext);
+  const { fonts, colors } = useContext(ThemeContext);
 
   const defaultStyles: ContactAutoCompleteComponentStyles = StyleSheet.create({
     containerStyle: {
@@ -35,12 +35,12 @@ const useMergeStyles = (
       paddingVertical: 10,
     },
     itemContactNameStyle: {
-      color: '#09101d',
+      color: colors.primaryTextColor,
       fontSize: 14,
       fontFamily: fonts.medium,
     },
     itemContactInfoStyle: {
-      color: '#09101d',
+      color: colors.primaryTextColor,
       fontSize: 12,
       fontFamily: fonts.regular,
     },

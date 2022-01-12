@@ -5,7 +5,7 @@ import { ThemeContext } from 'react-native-theme-component';
 import { CustomerItemStyles } from './types';
 
 const useMergeStyles = (style?: CustomerItemStyles): CustomerItemStyles => {
-  const { fonts } = useContext(ThemeContext);
+  const { fonts, colors } = useContext(ThemeContext);
 
   const defaultStyles: CustomerItemStyles = StyleSheet.create({
     containerStyle: {
@@ -31,7 +31,7 @@ const useMergeStyles = (style?: CustomerItemStyles): CustomerItemStyles => {
       fontSize: 14,
       flex: 1,
       marginLeft: 20,
-      color: '#000',
+      color: colors.primaryTextColor,
     },
     moreContainerStyle: {
       paddingHorizontal: 20,
@@ -47,7 +47,7 @@ const useMergeStyles = (style?: CustomerItemStyles): CustomerItemStyles => {
     actionTitleStyle: {
       fontFamily: fonts.regular,
       fontSize: 14,
-      color: '#000000',
+      color: colors.primaryTextColor,
       position: 'absolute',
       left: 50,
     },
@@ -62,6 +62,10 @@ const useMergeStyles = (style?: CustomerItemStyles): CustomerItemStyles => {
       fontFamily: fonts.medium,
       fontSize: 14,
       color: 'red',
+    },
+    actionsContainerStyle: {
+      paddingHorizontal: 20,
+      paddingTop: 15,
     },
   });
 

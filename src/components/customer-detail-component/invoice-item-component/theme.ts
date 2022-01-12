@@ -5,7 +5,7 @@ import { ThemeContext } from 'react-native-theme-component';
 import { InvoiceItemComponentStyles } from './types';
 
 const useMergeStyles = (style?: InvoiceItemComponentStyles): InvoiceItemComponentStyles => {
-  const { fonts } = useContext(ThemeContext);
+  const { fonts, colors } = useContext(ThemeContext);
   const defaultStyles: InvoiceItemComponentStyles = StyleSheet.create({
     containerStyle: {
       backgroundColor: 'white',
@@ -25,7 +25,7 @@ const useMergeStyles = (style?: InvoiceItemComponentStyles): InvoiceItemComponen
     invoiceNumberStyle: {
       fontFamily: fonts.medium,
       fontSize: 15,
-      color: '#0d2050',
+      color: colors.primaryTextColor,
       marginRight: 5,
     },
     invoiceNumberContainerStyle: {
@@ -35,12 +35,12 @@ const useMergeStyles = (style?: InvoiceItemComponentStyles): InvoiceItemComponen
     invoiceDescriptionStyle: {
       fontFamily: fonts.regular,
       fontSize: 13,
-      color: '#0d2050',
+      color: colors.primaryTextColor,
     },
     invoiceDateStyle: {
       fontFamily: fonts.regular,
       fontSize: 13,
-      color: '#0d2050',
+      color: colors.primaryTextColor,
       marginTop: 3,
     },
     invoiceAmountContainerStyle: {
@@ -55,7 +55,7 @@ const useMergeStyles = (style?: InvoiceItemComponentStyles): InvoiceItemComponen
     invoiceAmountStyle: {
       fontFamily: fonts.medium,
       fontSize: 15,
-      color: '#0d2050',
+      color: colors.primaryTextColor,
       marginTop: 15,
     },
     statusBoxStyle: {

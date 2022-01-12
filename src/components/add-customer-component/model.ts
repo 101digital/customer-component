@@ -42,46 +42,6 @@ export class CustomerData {
       dueDatePeriod ?? ''
     );
   }
-
-  //   static default(contactData: any, originalCountries: any, defaultDueDays?: string): CustomerData {
-  //     let country = '';
-  //     let dueDatePeriod = '';
-  //     if (contactData && contactData.addresses && contactData.addresses.length > 0) {
-  //       const countryName = originalCountries.filter(
-  //         (d: any) => d.attributes.code3 === contactData.addresses[0].countryCode
-  //       );
-
-  //       if (countryName.length > 0) {
-  //         country = countryName[0].attributes.name;
-  //       }
-  //     }
-
-  //     if (contactData && contactData.dueDatePeriod) {
-  //       dueDatePeriod = contactData.dueDatePeriod.toString();
-  //     } else if (defaultDueDays) {
-  //       dueDatePeriod = defaultDueDays;
-  //     }
-
-  //     return new CustomerData(
-  //       contactData
-  //         ? contactData.name
-  //           ? contactData.name
-  //           : contactData.firstName
-  //           ? contactData.firstName + ' ' + contactData.lastName
-  //           : ''
-  //         : '',
-  //       contactData?.firstName || '',
-  //       contactData?.lastName || '',
-  //       contactData?.contact?.mobileNumber || '',
-  //       contactData?.addresses[0]?.premise || '',
-  //       contactData?.addresses[0]?.dependentLocality || '',
-  //       contactData?.addresses[0]?.city || '',
-  //       country,
-  //       contactData?.contact?.email || '',
-  //       contactData?.addresses[0]?.postcode || '',
-  //       `${dueDatePeriod} ${i18n.t('company_detail.lbl_days')}`
-  //     );
-  //   }
 }
 
 export const CustomerSchema = Yup.object().shape({

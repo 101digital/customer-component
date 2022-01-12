@@ -5,7 +5,7 @@ import { SearchBoxStyles } from './types';
 import { useContext } from 'react';
 
 const useMergeStyles = (style?: SearchBoxStyles): SearchBoxStyles => {
-  const { fonts } = useContext(ThemeContext);
+  const { fonts, colors } = useContext(ThemeContext);
   const defaultStyles: SearchBoxStyles = StyleSheet.create({
     containerStyle: {
       backgroundColor: 'white',
@@ -36,7 +36,7 @@ const useMergeStyles = (style?: SearchBoxStyles): SearchBoxStyles => {
     inputTextStyle: {
       fontFamily: fonts.medium,
       fontSize: 14,
-      color: '#0d2050',
+      color: colors.primaryTextColor,
       flex: 1,
       textAlignVertical: 'center',
       paddingTop: 0,

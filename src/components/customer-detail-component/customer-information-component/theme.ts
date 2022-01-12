@@ -5,7 +5,7 @@ import { ThemeContext } from 'react-native-theme-component';
 import { CustomerInformationStyles } from './types';
 
 const useMergeStyles = (style?: CustomerInformationStyles): CustomerInformationStyles => {
-  const { fonts } = useContext(ThemeContext);
+  const { fonts, colors } = useContext(ThemeContext);
 
   const defaultStyles: CustomerInformationStyles = StyleSheet.create({
     containerStyle: {
@@ -35,7 +35,7 @@ const useMergeStyles = (style?: CustomerInformationStyles): CustomerInformationS
       paddingHorizontal: 15,
     },
     itemLabelTextStyle: {
-      color: '#09101d',
+      color: colors.primaryTextColor,
       fontSize: 13,
       fontFamily: fonts.medium,
       marginTop: 10,
@@ -50,7 +50,7 @@ const useMergeStyles = (style?: CustomerInformationStyles): CustomerInformationS
       marginTop: 5,
     },
     itemValueTextStyle: {
-      color: '#000000',
+      color: colors.primaryTextColor,
       fontFamily: fonts.regular,
       fontSize: 14,
     },

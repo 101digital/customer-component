@@ -18,6 +18,7 @@ export type CustomerItemStyles = {
   avatarContainerStyle?: StyleProp<ViewStyle>;
   avatarTextStyle?: StyleProp<TextStyle>;
   customerNameStyle?: StyleProp<TextStyle>;
+  actionsContainerStyle?: StyleProp<ViewStyle>;
   moreContainerStyle?: StyleProp<ViewStyle>;
   actionButtonStyle?: StyleProp<ViewStyle>;
   actionTitleStyle?: StyleProp<TextStyle>;

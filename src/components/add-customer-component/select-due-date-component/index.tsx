@@ -71,102 +71,106 @@ const SelectDueDateComponent = (props: SelectDueDateComponentProps) => {
       onBackButtonPress={closeModal}
       onBackdropPress={closeModal}
     >
-      <Text style={styles.headerTitleStyle}>
-        {i18n?.t('customer_component.lbl_invoice_due_date') ?? 'Invoice due after'}
-      </Text>
-      {terms.map((term, index) => {
-        const _isSelected = selectedIndex === index;
-        const _title = term.isDefault
-          ? (i18n?.t('customer_component.lbl_default_due_date') ?? 'Default (%s days)').replace(
-              '%s',
-              defaultDueDays
-            )
-          : (i18n?.t('customer_component.lbl_due_days') ?? '%s days').replace('%s', term.value);
-        return (
-          <TouchableOpacity
-            activeOpacity={0.1}
-            style={[
-              styles.itemContainerStyle,
-              {
-                backgroundColor: _isSelected ? _activeBackgroundColor : _inActiveBackgroundColor,
-              },
-            ]}
-            onPress={() => onChangedValue(term)}
-          >
-            <Text
-              style={[
-                styles.itemTextStyle,
-                { color: _isSelected ? _activeTextColor : _inActiveTextColor },
-              ]}
-            >
-              {_title}
-            </Text>
-            {_isSelected && (
-              <View style={styles.suffixContainerStyle}>
-                <CheckIcon color={_activeTextColor} />
-              </View>
-            )}
-          </TouchableOpacity>
-        );
-      })}
-      <Formik
-        innerRef={formikRef}
-        initialValues={CustomDueDateData.initial()}
-        validationSchema={CustomDueDateSchema}
-        onSubmit={() => {}}
-      >
-        {({ values }) => {
-          const _isSelected = selectedIndex === -1;
+      <View style={styles.containerStyle}>
+        <Text style={styles.headerTitleStyle}>
+          {i18n?.t('customer_component.lbl_invoice_due_date') ?? 'Invoice due after'}
+        </Text>
+        {terms.map((term, index) => {
+          const _isSelected = selectedIndex === index;
+          const _title = term.isDefault
+            ? (i18n?.t('customer_component.lbl_default_due_date') ?? 'Default (%s days)').replace(
+                '%s',
+                defaultDueDays
+              )
+            : (i18n?.t('customer_component.lbl_due_days') ?? '%s days').replace('%s', term.value);
           return (
-            <InputField
-              name='dueDate'
-              placeholder={_isSelected ? '' : i18n?.t('customer_component.plh_custom') ?? 'Custom'}
-              returnKeyType={'done'}
-              autoFocus={false}
-              formatError={(e) => i18n?.t(e) ?? 'Please enter invoice due after'}
-              placeholderTextColor={_isSelected ? _activeTextColor : _inActiveTextColor}
-              selectionColor={'#fff'}
-              style={{
-                contentContainerStyle: [
-                  styles.itemContainerStyle,
-                  {
-                    backgroundColor: _isSelected
-                      ? _activeBackgroundColor
-                      : _inActiveBackgroundColor,
-                  },
-                ],
-                textInputStyle: [
+            <TouchableOpacity
+              activeOpacity={0.1}
+              style={[
+                styles.itemContainerStyle,
+                {
+                  backgroundColor: _isSelected ? _activeBackgroundColor : _inActiveBackgroundColor,
+                },
+              ]}
+              onPress={() => onChangedValue(term)}
+            >
+              <Text
+                style={[
                   styles.itemTextStyle,
                   { color: _isSelected ? _activeTextColor : _inActiveTextColor },
-                ],
-              }}
-              textAlign='center'
-              textAlignVertical='center'
-              onFocus={() => {
-                setActiveField(true);
-                setSelectedIndex(-1);
-              }}
-              onSubmitEditing={() => {
-                if (!isEmpty(values.dueDate)) {
-                  onChangedValue({
-                    id: -1001,
-                    value: parseInt(values.dueDate, 10),
-                  });
-                  return true;
-                }
-              }}
-              keyboardType={'number-pad'}
-              suffixIcon={
-                _isSelected && (
-                  <View style={styles.suffixContainerStyle}>
-                    <CheckIcon color={_activeTextColor} />
-                  </View>
-                )
-              }
-            />
+                ]}
+              >
+                {_title}
+              </Text>
+              {_isSelected && (
+                <View style={styles.suffixContainerStyle}>
+                  <CheckIcon color={_activeTextColor} />
+                </View>
+              )}
+            </TouchableOpacity>
           );
-        }}
-      </Formik>
+        })}
+        <Formik
+          innerRef={formikRef}
+          initialValues={CustomDueDateData.initial()}
+          validationSchema={CustomDueDateSchema}
+          onSubmit={() => {}}
+        >
+          {({ values }) => {
+            const _isSelected = selectedIndex === -1;
+            return (
+              <InputField
+                name='dueDate'
+                placeholder={
+                  _isSelected ? '' : i18n?.t('customer_component.plh_custom') ?? 'Custom'
+                }
+                returnKeyType={'done'}
+                autoFocus={false}
+                formatError={(e) => i18n?.t(e) ?? 'Please enter invoice due after'}
+                placeholderTextColor={_isSelected ? _activeTextColor : _inActiveTextColor}
+                selectionColor={'#fff'}
+                style={{
+                  contentContainerStyle: [
+                    styles.itemContainerStyle,
+                    {
+                      backgroundColor: _isSelected
+                        ? _activeBackgroundColor
+                        : _inActiveBackgroundColor,
+                    },
+                  ],
+                  textInputStyle: [
+                    styles.itemTextStyle,
+                    { color: _isSelected ? _activeTextColor : _inActiveTextColor },
+                  ],
+                }}
+                textAlign='center'
+                textAlignVertical='center'
+                onFocus={() => {
+                  setActiveField(true);
+                  setSelectedIndex(-1);
+                }}
+                onSubmitEditing={() => {
+                  if (!isEmpty(values.dueDate)) {
+                    onChangedValue({
+                      id: -1001,
+                      value: parseInt(values.dueDate, 10),
+                    });
+                    return true;
+                  }
+                }}
+                keyboardType={'number-pad'}
+                suffixIcon={
+                  _isSelected && (
+                    <View style={styles.suffixContainerStyle}>
+                      <CheckIcon color={_activeTextColor} />
+                    </View>
+                  )
+                }
+              />
+            );
+          }}
+        </Formik>
+      </View>
       <View style={{ height: padding }} />
     </BottomSheet>
   );
