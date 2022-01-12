@@ -23,6 +23,7 @@ import Contacts from 'react-native-contacts';
 import SelectDueDateComponent from './select-due-date-component';
 import { PaymentTerm } from '../../types';
 import { CustomerContext } from '../../context/customer-context';
+import { CustomerService } from '../../services/customer-service';
 
 const defaultPaymentTerms: PaymentTerm[] = [
   {
@@ -54,7 +55,6 @@ const AddCustomerComponent = (props: AddCustomerComponentProps) => {
     arrowDownIcon,
     activeBorderColor,
     customer,
-    defaultDueDays,
     paymentTerms,
     onCreatedCustomer,
     onUpdatedCustomer,
@@ -64,6 +64,7 @@ const AddCustomerComponent = (props: AddCustomerComponentProps) => {
     SelectDueDate,
   } = props;
   const formikRef: any = useRef(null);
+  const defaultDueDays = CustomerService.instance().getDefaultDueDate();
   const styles: AddCustomerComponentStyles = useMergeStyles(style);
   const { colors, deviceCountryCode, countries, i18n } = useContext(ThemeContext);
   const [isShowCountryPicker, setShowCountryPicker] = useState(false);

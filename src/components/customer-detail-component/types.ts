@@ -9,7 +9,6 @@ import { InvoiceSummaryStyles } from './invoice-summary-component/types';
 
 export type CustomerDetailComponentProps = {
   customer: CustomerReference;
-  defaultDueDays: number;
   tabIndex: number;
   onEditCustomer: (customer: CustomerReference) => void;
   onDeletedCustomer?: () => void;

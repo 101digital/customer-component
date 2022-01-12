@@ -6,12 +6,12 @@ import HeaderDetailComponent from './header-component';
 import CustomerInformationComponent from './customer-information-component';
 import { CustomerContext } from '../../context/customer-context';
 import CustomerActivityComponent from './customer-activity-component';
+import { CustomerService } from '../../services/customer-service';
 
 const CustomerDetailComponent = (props: CustomerDetailComponentProps) => {
   const {
     style,
     customer,
-    defaultDueDays,
     onEditCustomer,
     onDeletedCustomer,
     onInvoiceActions,
@@ -26,6 +26,7 @@ const CustomerDetailComponent = (props: CustomerDetailComponentProps) => {
     indicatorColor,
     InvoiceShimmer,
   } = props;
+  const defaultDueDays = CustomerService.instance().getDefaultDueDate();
   const styles: CustomerDetailComponentStyles = useMergeStyles(style);
   const [activeIndex, setActiveIndex] = useState(tabIndex);
   const {

@@ -3,6 +3,7 @@ import { CreateCustomerParams, FetchCustomerParam, InvoiceParam } from '../types
 type CustomerClient = {
   customerClient: any;
   invoiceClient: any;
+  defaultDueDate?: number;
 };
 
 export class CustomerService {
@@ -10,6 +11,7 @@ export class CustomerService {
 
   private _customerClient?: any;
   private _invoiceClient?: any;
+  private _defaultDueDate = 15;
 
   constructor() {
     if (CustomerService._instance) {
@@ -27,7 +29,14 @@ export class CustomerService {
   public initClients = (clients: CustomerClient) => {
     this._customerClient = clients.customerClient;
     this._invoiceClient = clients.invoiceClient;
+    this._defaultDueDate = clients.defaultDueDate ?? this._defaultDueDate;
   };
+
+  public setDefaultDueDate = (dueDate?: number) => {
+    this._defaultDueDate = dueDate ?? this._defaultDueDate;
+  };
+
+  public getDefaultDueDate = () => this._defaultDueDate;
 
   fetchCustomers = async (params?: FetchCustomerParam) => {
     if (this._customerClient) {

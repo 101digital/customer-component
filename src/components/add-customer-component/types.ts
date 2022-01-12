@@ -9,7 +9,6 @@ import { SelectDueDateComponentStyles } from './select-due-date-component/types'
 
 export type AddCustomerComponentProps = {
   customer?: CustomerReference;
-  defaultDueDays: number;
   paymentTerms?: PaymentTerm[];
   arrowDownIcon?: ReactNode;
   activeBorderColor?: string;

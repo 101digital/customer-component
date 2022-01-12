@@ -9,15 +9,18 @@
     "env": {
       "development": {
         "customerBaseUrl": "https://sandbox.101digital.io/customer-service/1.0.0",
-        "invoiceBaseUrl": "https://sandbox.101digital.io/invoice-service/2.0.0"
+        "invoiceBaseUrl": "https://sandbox.101digital.io/invoice-service/2.0.0",
+        "defaultDueDate": 15
       },
       "staging": {
         "customerBaseUrl": "https://sandbox.101digital.io/customer-service/1.0.0",
-        "invoiceBaseUrl": "https://sandbox.101digital.io/invoice-service/2.0.0"
+        "invoiceBaseUrl": "https://sandbox.101digital.io/invoice-service/2.0.0",
+        "defaultDueDate": 15
       },
       "production": {
         "customerBaseUrl": "https://api.101digital.io/customer-service/v1.0",
-        "invoiceBaseUrl": "https://api.101digital.io/invoice-service/v2.0"
+        "invoiceBaseUrl": "https://api.101digital.io/invoice-service/v2.0",
+        "defaultDueDate": 15
       }
     }
   },
