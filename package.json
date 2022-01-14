@@ -1,6 +1,6 @@
 {
   "name": "customer-component",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "private": true,
   "description": "A re-use component to manage customer",
   "repository": {

@@ -6,7 +6,17 @@ import { AlertModal, BottomSheet, ThemeContext } from 'react-native-theme-compon
 import { DeleteIcon, EditIcon, MoreIcon } from '../../../assets';
 
 const CustomerItemComponent = (props: CustomerItemProps) => {
-  const { customer, onPressed, style, moreIcon, editIcon, deleteIcon, onDeleted, onEdit } = props;
+  const {
+    customer,
+    onPressed,
+    style,
+    moreIcon,
+    editIcon,
+    deleteIcon,
+    onDeleted,
+    onEdit,
+    editable,
+  } = props;
   const styles: CustomerItemStyles = useMergeStyles(style);
   const [isShowMore, setShowMore] = useState(false);
   const [isConfirmDelete, setConfirmDelete] = useState(false);
@@ -22,13 +32,15 @@ const CustomerItemComponent = (props: CustomerItemProps) => {
           <Text style={styles.avatarTextStyle}>{customer.avator}</Text>
         </View>
         <Text style={styles.customerNameStyle}>{customer.customerName}</Text>
-        <TouchableOpacity
-          activeOpacity={0.8}
-          style={styles.moreContainerStyle}
-          onPress={toggleMore}
-        >
-          {moreIcon ?? <MoreIcon color='#000' />}
-        </TouchableOpacity>
+        {editable && (
+          <TouchableOpacity
+            activeOpacity={0.8}
+            style={styles.moreContainerStyle}
+            onPress={toggleMore}
+          >
+            {moreIcon ?? <MoreIcon color='#000' />}
+          </TouchableOpacity>
+        )}
       </TouchableOpacity>
       <BottomSheet
         isVisible={isShowMore}
@@ -102,6 +114,10 @@ const CustomerItemComponent = (props: CustomerItemProps) => {
       />
     </>
   );
+};
+
+CustomerItemComponent.defaultProps = {
+  editable: true,
 };
 
 export default CustomerItemComponent;

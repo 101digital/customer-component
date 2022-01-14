@@ -32,6 +32,7 @@ export type CustomerListComponentProps = {
       moreIcon?: ReactNode;
       editIcon?: ReactNode;
       deleteIcon?: ReactNode;
+      editable?: boolean;
     };
     style?: CustomerItemStyles;
   };
