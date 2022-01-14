@@ -1,0 +1,100 @@
+{
+  "id": "customer-component",
+  "name": "Customer Component",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/101digital/customer-component.git"
+  },
+  "config": {
+    "env": {
+      "development": {
+        "customerBaseUrl": "https://sandbox.101digital.io/customer-service/1.0.0",
+        "invoiceBaseUrl": "https://sandbox.101digital.io/invoice-service/2.0.0",
+        "defaultDueDate": 15
+      },
+      "staging": {
+        "customerBaseUrl": "https://sandbox.101digital.io/customer-service/1.0.0",
+        "invoiceBaseUrl": "https://sandbox.101digital.io/invoice-service/2.0.0",
+        "defaultDueDate": 15
+      },
+      "production": {
+        "customerBaseUrl": "https://api.101digital.io/customer-service/v1.0",
+        "invoiceBaseUrl": "https://api.101digital.io/invoice-service/v2.0",
+        "defaultDueDate": 15
+      }
+    }
+  },
+  "dependencies": [],
+  "templates": [],
+  "texts": {
+    "customer_component": {
+      "plh_search": "Search",
+      "btn_edit_customer": "Edit customer",
+      "btn_delete_customer": "Delete customer",
+      "btn_cancel": "Cancel",
+      "lbl_delete_customer": "Delete customer",
+      "msg_delete_customer": "Are you sure? once deleted, you cannot undo this action.",
+      "btn_detele": "Delete",
+      "msg_no_results": "No results",
+      "lbl_no_customers": "No Customers",
+      "msg_no_customers": "Use the Add customer button to create a customer",
+      "btn_create_customer": "Create new customer",
+      "lbl_due_days": "%s days",
+      "lbl_activity": "Activity",
+      "lbl_details": "Details",
+      "btn_edit": "Edit",
+      "lbl_customer_type": "Customer type",
+      "lbl_customer_name": "Name",
+      "plh_enter_name": "Enter name",
+      "lbl_customer_email": "Email",
+      "lbl_customer_email_id": "Email ID (Optional)",
+      "plh_enter_email_id": "Enter email ID",
+      "lbl_customer_phone": "Phone",
+      "lbl_customer_phone_number": "Phone number",
+      "plh_enter_phone_number": "Enter phone number",
+      "lbl_customer_address": "Address",
+      "lbl_invoice_due_date": "Invoice due after",
+      "lbl_default_due_date": "Default (%s days)",
+      "lbl_address_line_1": "Address line 1 (Optional)",
+      "plh_enter_address_line_1": "Enter address line 1",
+      "lbl_address_line_2": "Address line 2 (Optional)",
+      "plh_enter_address_line_2": "Enter address line 2",
+      "lbl_city_name": "City name (Optional)",
+      "plh_enter_city_name": "Enter city name",
+      "lbl_country": "Country (Optional)",
+      "plh_select_country": "Select country",
+      "lbl_postalcode": "Postal code (Optional)",
+      "plh_enter_postalcode": "Enter postal code",
+      "plh_custom": "Custom",
+      "btn_add_customer": "Add customer",
+      "msg_deleted_successful": "Customer deleted successfully",
+      "msg_warning_permission1": "Allow %s access to your device contacts to add your contacts as customers. To do this, tap on ",
+      "msg_warning_permission2": " and turn on Contacts",
+      "btn_device_setting": "Settings",
+      "lbl_individual": "Individual",
+      "lbl_business": "Business",
+      "lbl_allow_access_contact": "Allow %s To Access Your Contacts",
+      "msg_allow_access_contact": "Tap Open Settings and turn on Contacts to allow access.",
+      "btn_open_settings": "Open Settings",
+      "val_due_after_required": "Please enter invoice due after",
+      "msg_added_successful": "Customer added successfully",
+      "val_enter_customer_name": "Please enter name",
+      "val_invalid_customer_name": "Name must be at least 2 characters",
+      "val_invalid_customer_mobile_number": "Mobile number must be at least 6 characters",
+      "val_invalid_customer_mobile_number2": "Mobile number should numeric and the length should be greater than 6 digits and less than 15 digits",
+      "val_invalid_customer_address1": "Address line 1 must be at least 3 characters",
+      "val_invalid_customer_address2": "Address line 2 must be at least 3 characters",
+      "val_invalid_customer_city": "City name must be at least 2 characters",
+      "val_invalid_customer_postal": "Postal code must be at least 3 characters",
+      "val_invalid_customer_email": "Invalid email address",
+      "msg_update_successful": "Customer updated successfully",
+      "btn_update_customer": "Update customer",
+      "msg_error_load_customer": "Error loading customers",
+      "btn_retry": "Try again",
+      "lbl_no_customer_invoice_found": "This customer doesn’t have any invoice",
+      "lbl_due_invoice": "Due",
+      "lbl_overdue_invoice": "Overdue",
+      "lbl_paid_invoice": "Paid"
+    }
+  }
+}
