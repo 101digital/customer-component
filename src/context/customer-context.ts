@@ -153,11 +153,8 @@ export function useCustomerContextValue(): CustomerContextData {
   const refreshCustomers = useCallback(
     async (params?: FetchCustomerParam) => {
       try {
-        setDeletedSuccessful(false);
-        setCreatedSuccessful(false);
         setLoadCustomerError(undefined);
         setRefreshingCustomer(true);
-        setUpdatedSuccessful(false);
         const { data, paging } = await customerService.fetchCustomers({ ...params, pageNum: 1 });
         const _filteredData = data.filter((item: CustomerReference) => {
           if (item.name || !isEmpty(item.firstName)) {
@@ -208,6 +205,9 @@ export function useCustomerContextValue(): CustomerContextData {
         setDeletingCustomer(true);
         await customerService.deleteCustomer(customerId);
         setDeletedSuccessful(true);
+        setTimeout(() => {
+          setDeletedSuccessful(false);
+        }, 100);
         setDeletingCustomer(false);
         refreshCustomers();
       } catch (err) {
@@ -231,6 +231,9 @@ export function useCustomerContextValue(): CustomerContextData {
       setCreatingCustomer(true);
       const { data } = await customerService.addCustomer(params);
       setCreatedSuccessful(true);
+      setTimeout(() => {
+        setCreatedSuccessful(false);
+      }, 100);
       setCreatingCustomer(false);
       refreshCustomers();
       return {
@@ -249,6 +252,9 @@ export function useCustomerContextValue(): CustomerContextData {
       setUpdatingCustomer(true);
       const { data } = await customerService.updateCustomer(customerId, params);
       setUpdatedSuccessful(true);
+      setTimeout(() => {
+        setUpdatedSuccessful(false);
+      }, 100);
       setUpdatingCustomer(false);
       refreshCustomers();
       return {
