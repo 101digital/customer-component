@@ -85,6 +85,7 @@ const SelectDueDateComponent = (props: SelectDueDateComponentProps) => {
             : (i18n?.t('customer_component.lbl_due_days') ?? '%s days').replace('%s', term.value);
           return (
             <TouchableOpacity
+              key={index.toString()}
               activeOpacity={0.1}
               style={[
                 styles.itemContainerStyle,
