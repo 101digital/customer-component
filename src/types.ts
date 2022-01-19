@@ -20,18 +20,82 @@ export interface CustomerInvoiceData {
 }
 
 export interface Invoice {
+  balanceAmount: number;
+  createdAt: string;
+  viewedAt: string;
   invoiceId: string;
   invoiceNumber: string;
+  accountingId: string;
+  type: string;
   currency: string;
   invoiceDate: string;
   dueDate: string;
   chargeDate: string;
   status: InvoiceStatus[];
   numberOfDocuments?: number;
+  documents: DocumentReference[];
+  paymentId: string;
+  paymentStatus: string;
+  items: ItemInvoiceReference[];
   description: string;
+  invoiceReference?: string;
+  invoiceSubTotal: number;
   totalAmount: number;
+  totalDiscount: number;
+  totalPaid: number;
+  totalTax: number;
+  extensions: Extension[];
+  version?: string;
   customer?: Customer;
+  merchant: MerchantReference;
+  bankAccount: BankAccountReference;
   subStatus?: InvoiceSubStatus[];
+}
+
+export interface ItemInvoiceReference {
+  id?: string;
+  itemReference?: string;
+  description?: string;
+  quantity: number;
+  amount?: number;
+  rate: number;
+  orderIndex?: number;
+  itemName: string;
+  itemUOM?: string;
+  extensions?: Extension[];
+}
+export interface MerchantReference {
+  id: string;
+  name: string;
+}
+export interface DocumentReference {
+  documentId: string;
+  documentName: string;
+  documentUrl?: string;
+}
+
+export interface BankAccountReference {
+  bankId: string;
+  sortCode: string;
+  accountNumber: string;
+  accountName: string;
+}
+
+export interface Extension {
+  addDeduct: AddDeduct;
+  value: number;
+  type: DiscountType;
+  name: string;
+}
+
+export enum AddDeduct {
+  add = 'ADD',
+  deduct = 'DEDUCT',
+}
+
+export enum DiscountType {
+  Percentage = 'PERCENTAGE',
+  Fixed = 'FIXED_VALUE',
 }
 
 export interface InvoiceStatus {
